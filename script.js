@@ -97,3 +97,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateColors("#0099ff");
 });
+
+
+document.getElementById("exportBtn").addEventListener("click", () => {
+    const paletteContainer = document.getElementById("paletteContainer");
+    
+    html2canvas(paletteContainer, {
+        backgroundColor: "#fff" 
+    }).then(canvas => {
+        let link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = "color_palette.png";
+        link.click();
+    });
+});
+
+/* document.getElementById("exportSVGBtn").addEventListener("click", () => {
+    const mainColorHex = document.getElementById("mainColorHex").innerText;
+    const complementaryColorHex = document.getElementById("complementaryColorHex").innerText;
+
+    // SVG template structure
+    const svgContent = `
+        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="180" height="50" fill="${mainColorHex}" />
+            <text x="20" y="40" font-size="18" fill="white">${mainColorHex}</text>
+            <rect x="10" y="80" width="180" height="50" fill="${complementaryColorHex}" />
+            <text x="20" y="110" font-size="18" fill="white">${complementaryColorHex}</text>
+        </svg>
+    `;
+
+    // Create a Blob and download it as SVG
+    const blob = new Blob([svgContent], { type: "image/svg+xml" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "color_palette.svg";
+    link.click();
+});
+ */

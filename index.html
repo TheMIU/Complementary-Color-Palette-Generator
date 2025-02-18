@@ -13,7 +13,7 @@
         <input type="color" id="colorPicker" value="#3498db">
         <input type="text" id="colorHex" value="#3498db">
         
-        <div class="palette">
+        <div id="paletteContainer" class="palette">
             <div class="color-section">
                 <h3>Main Color</h3>
                 <div class="color-box" id="mainColor"><span id="mainColorHex">#3498db</span></div>
@@ -25,9 +25,13 @@
                 <div id="compShades"></div>
             </div>
         </div>
+
+        <button id="exportBtn">Export as PNG</button>
+       <!--  <button id="exportSVGBtn">Export as SVG</button> -->
     </div>
 
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complementary Color Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Complementary Color Generator</h2>
+        <input type="color" id="colorPicker" value="#3498db">
+        <input type="text" id="colorHex" value="#3498db">
+        
+        <div class="palette">
+            <div class="color-section">
+                <h3>Main Color</h3>
+                <div class="color-box" id="mainColor"><span id="mainColorHex">#3498db</span></div>
+                <div id="mainShades"></div>
+            </div>
+            <div class="color-section">
+                <h3>Complementary Color</h3>
+                <div class="color-box" id="complementaryColor"><span id="complementaryColorHex">#db6234</span></div>
+                <div id="compShades"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
